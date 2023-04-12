@@ -1,0 +1,18 @@
+{
+  "name": "taller-dos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "JDQN",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "date-fns": "^2.29.3"
+  }
+}
