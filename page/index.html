@@ -12,78 +12,108 @@
 
 <body>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1>Registro de Estudiantes</h1>
-
+  <nav class="navbar bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white">Formulario Registro de Estudiantes</a>
+      <form class="d-flex" role="search">
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Registrar Estudiantes
-        </button>
-
-      </div>
+        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+          data-bs-target="#exampleModal">Registrar Estidiante</button>
+      </form>
     </div>
-  </div>
-
+  </nav>
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
+
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Formulario Registro de Estudiantes</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
+
         <div class="modal-body">
 
           <!-- Creacion del form -->
           <form id="form">
+            <div class="row">
 
-            <div class="mb-3">
-              <label for="tipoDocumento" class="form-label">Tipo Documento</label>
-              <select name="tipoDocumento" id="tipoDocumento" class="form-select">
-                <option value="1">Cedula</option>
-                <option value="2">Pasaporte</option>
-                <option value="3">Tarjeta de Identidad</option>
-              </select>
+              <!-- Campo Tipo de identificacion-->
+              <div class="col-md-6">
+                <div class="mb-6">
+                  <label for="tipoIdentificacion" class="form-label">Tipo Identificacion</label>
+                  <select name="tipoIdentificacion" id="tipoIdentificacion" class="form-select">
+                    <option value=1>Cedula</option>
+                    <option value=2>Pasaporte</option>
+                    <option value=3>Tarjeta de Identidad</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Campo Numero de Documento -->
+              <div class="col-md-6">
+                <div class="mb-6">
+                  <label for="numeroIdentificacion" class="form-label">Numero de identificacion</label>
+                  <input type="number" class="form-control" id="numeroIdentificacion">
+                </div>
+              </div>
+
+              <!-- cCampo Nombre -->
+              <div class="mb-3">
+                <label for="nombres" class="form-label">Nombres</label>
+                <input type="text" class="form-control" id="nombres"></input>
+              </div>
+
+              <!-- Campo Apellido -->
+              <div class="mb-3">
+                <label for="apellidos" class="form-label">Apellidos</label>
+                <input type="text" class="form-control" id="apellidos"></input>
+              </div>
+
+              <!-- Campo Celular -->
+              <div class="col-md-6">
+                <div class="mb-6">
+                  <div class="mb-3">
+                    <label for="celular" class="form-label">Celular</label>
+                    <input type="number" class="form-control" id="celular"></input>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Campo email -->
+              <div class="col-md-6">
+                <div class="mb-6">
+                  <div class="mb-3">
+                    <label for="correo" class="form-label">Correo</label>
+                    <input type="email" class="form-control" id="correo"></input>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Campo Link de LinkedIn -->
+              <div class="col-md-6">
+                <div class="mb-6">
+                  <div class="mb-3">
+                    <label for="linkedin" class="form-label">Linkedin</label>
+                    <input type="text" class="form-control" id="linkedin"></input>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Campo Link de GitHub -->
+              <div class="col-md-6">
+                <div class="mb-6">
+                  <div class="mb-3">
+                    <label for="github" class="form-label">GitHu</label>
+                    <input type="text" class="form-control" id="github"></input>
+                  </div>
+                </div>
+              </div>
+
+
             </div>
-
-            <div class="mb-3">
-              <label for="numeroDocumento" class="form-label">Numero Documento</label>
-              <input type="text" class="form-control" id="numeroDocumento"></input>
-            </div>
-
-            <div class="mb-3">
-              <label for="nombre" class="form-label">Nombres</label>
-              <input type="text" class="form-control" id="nombre"></input>
-            </div>
-
-            <div class="mb-3">
-              <label for="apellido" class="form-label">Apellidos</label>
-              <input type="text" class="form-control" id="apellido"></input>
-            </div>
-
-            <div class="mb-3">
-              <label for="celular" class="form-label">Celular</label>
-              <input type="number" class="form-control" id="celular"></input>
-            </div>
-
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email"></input>
-            </div>
-
-            <div class="mb-3">
-              <label for="linkedin" class="form-label">Linkedin</label>
-              <input type="text" class="form-control" id="linkedin"></input>
-            </div>
-
-            <div class="mb-3">
-              <label for="github" class="form-label">GitHub</label>
-              <input type="text" class="form-control" id="github"></input>
-            </div>
-
           </form>
 
         </div>
@@ -95,10 +125,17 @@
     </div>
   </div>
 
+  <br>
+
+  <!-- Creacion d ela tabla -->
+  <div id="students-data">
+
+  </div>
+
 
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../dist/index.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>

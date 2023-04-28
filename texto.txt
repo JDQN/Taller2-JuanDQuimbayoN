@@ -1,0 +1,58 @@
+const form = document.getElementById('form') as HTMLFormElement;
+const btnGuardar = document.getElementById('btn-guardar') as HTMLButtonElement;
+
+btnGuardar.addEventListener('click', (e) => {
+
+    e.preventDefault();
+    console.log('Ingreso a la validación del formulario');
+
+    //Obtener los valores de los inputs
+    const tipoIdentificacion = document.getElementById('tipoIdentificacion') as HTMLInputElement;
+    const numeroIdentificacion = document.getElementById('numeroIdentificacion') as HTMLInputElement;
+    const nombres = document.getElementById('nombres') as HTMLInputElement;
+    const apellidos = document.getElementById('apellidos') as HTMLInputElement;
+    const celular = document.getElementById('celular') as HTMLInputElement;
+    const correo = document.getElementById('correo') as HTMLInputElement;
+    const linkedin = document.getElementById('linkedin') as HTMLInputElement;
+    const github = document.getElementById('github') as HTMLInputElement;
+
+
+    // let myHeader = new Headers();
+    // myHeader.append('Content-Type', 'application/json');
+    // myHeader.append('Authorization', 'Bearer 123456789');
+
+    // let raw = JSON.stringify({
+    //     'tipoIdentificacion': tipoIdentificacion.value,
+    //     'numeroDocumento': numeroDocumento.value,
+    //     'nombre': nombre.value,
+    //     'apellido': apellido.value,
+    //     'celular': celular.value,
+    //     'email': email.value,
+    //     'linkedin': linkedin.value,
+    //     'github': github.value
+    // });
+
+    let requestOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWNhY2lvbiI6MTAzMzc0MjUyNywiY29ycmVvIjoiY3JlYWNpb24yMzE5QGdtYWlsLmNvbSIsImlhdCI6MTY4MTc4MDM4NCwiZXhwIjoxNjgyMzg1MTg0fQ.nORCgCiWAxHz1pBJAqv-T5oUEpjiB3Vfj9cEded8qQE'
+        },
+        body: JSON.stringify({
+            'tipoIdentificacion': tipoIdentificacion.value,
+            'numeroIdentificacion': numeroIdentificacion.value,
+            'nombres': nombres.value,
+            'apellidos': apellidos.value,
+            'celular': celular.value,
+            'correo': correo.value,
+            'linkedin': linkedin.value,
+            'github': github.value
+        })
+    }
+
+    fetch('https://apiestudiantes.maosystems.dev/estudiantes', requestOptions)
+        .then(response => response.json())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+
+});
